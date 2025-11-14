@@ -5,7 +5,7 @@
 $ cd Desktop/work/tools/openlane_working_dir/openlane
 $ git clone https://github.com/nickson-jose/vsdstdcelldesign
 $ cd vsdstdcelldesign
-$ cp /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech .
+$ cp /home/vsduser/Desktop/work/tools/openlane_working_dir/pdks/sky130A/libs.tech/magic/sky130A.tech.
 $ ls
 $ magic -T sky130A.tech sky130_inv.mag &
 ```
