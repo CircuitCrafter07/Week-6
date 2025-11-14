@@ -8,10 +8,30 @@ This document provides a detailed overview of the two fundamental phases of crea
 
 ## 🎨 Part 1: Design Library Cell using Magic Layout & NGSpice
 
-Before an SoC can be fabricated, a "standard cell library" is required. This is a collection of fundamental logic gates (e.g., INVERTER, NAND, NOR, Flip-Flops) with a standardized height.
+A **SPICE deck** is a structured text file used in circuit simulation tools such as NGSpice or HSpice.  
+It contains:
+- **Component declarations** (MOSFETs, resistors, capacitors)
+- **Node connectivity**
+- **Model definitions**
+- **Analysis commands** (DC sweep, AC analysis, transient simulation)
 
-* **Magic Layout:** Magic is a VLSI (Very Large Scale Integration) layout tool used to "draw" the physical transistors and wires. This involves creating polygons on different layers (like N-well, Polysilicon, Metal) that correspond to the masks used in fabrication.
-* **NGSpice Characterization:** After layout, the design is "characterized" using a simulator like NGSpice. This process runs simulations to determine critical performance data, such as propagation delay (timing) and power consumption, for various input conditions and output loads. This data is then used by higher-level tools for synthesis and timing analysis.
+### Why SPICE Decks Matter
+They allow verification of:
+- Voltage transfer characteristics (VTC)
+- Noise margins
+- Rise/fall times
+- Propagation delays
+- Power dissipation  
+This helps validate the electrical behavior before layout and fabrication.
+
+A typical CMOS inverter deck includes:
+- PMOS and NMOS transistor definitions
+- Input voltage source
+- Supply sources
+- Load capacitor
+- `.tran` and `.dc` analysis commands
+
+---
 
 ### <ins>SPICE Deck Creation for a CMOS Inverter</ins>
 
